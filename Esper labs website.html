@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esper Labs | Your Creative Partner.</title>
+<meta name="description" content="Esper Labs — Creative Agency based in Guntur, Andhra Pradesh. We offer content creation, video production, brand identity, social media management, and personal branding.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:      #111111;
+  --card:    #1a1a1a;
+  --card-hv: #202020;
+  --red:     #C8251A;
+  --red2:    #E02920;
+  --white:   #F2F2F0;
+  --muted:   #777;
+  --dim:     #555;
+  --line:    rgba(255,255,255,0.07);
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 999; opacity: 0.45;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  padding: 0 60px; height: 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(17,17,17,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-brand { line-height: 1; }
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.65rem; letter-spacing: 0.05em; color: var(--white);
+}
+.nav-logo span { color: var(--red); }
+.nav-sub {
+  font-size: 0.58rem; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--dim); margin-top: 3px;
+}
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--red); color: #fff;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; padding: 10px 22px;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--red2); }
+.nav-cta svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* ── HERO ── */
+.hero {
+  padding: 100px 60px 90px;
+  border-bottom: 1px solid var(--line);
+  position: relative; overflow: hidden;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 26px;
+}
+.hero-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 26px; height: 2px; background: var(--red);
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.6rem, 8vw, 7.5rem);
+  line-height: 1.0; letter-spacing: 0.01em;
+  color: var(--white); max-width: 980px;
+}
+.hero h1 .red { color: var(--red); }
+.hero-bottom {
+  margin-top: 44px;
+  display: flex; flex-direction: column;
+  align-items: flex-start; gap: 16px;
+  max-width: 480px;
+}
+.hero-desc {
+  font-size: 0.95rem; color: var(--muted); line-height: 1.9;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--line);
+  font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted);
+  padding: 9px 16px; white-space: nowrap;
+}
+.hero-tag .dot { color: var(--red); }
+.hero-watermark {
+  position: absolute; right: -20px; bottom: -50px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20rem; color: rgba(200,37,26,0.035);
+  letter-spacing: -0.02em; line-height: 1;
+  pointer-events: none; user-select: none;
+}
+
+/* ── MARQUEE ── */
+.marquee-strip {
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0; overflow: hidden;
+  background: var(--card);
+}
+.marquee-track {
+  display: flex; gap: 52px;
+  animation: marquee 24s linear infinite;
+  white-space: nowrap;
+}
+.marquee-track span {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--dim); flex-shrink: 0;
+}
+.marquee-track .dot { color: var(--red); font-size: 0.4rem; align-self: center; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── SHARED SECTION ── */
+.section {
+  padding: 88px 60px;
+  border-bottom: 1px solid var(--line);
+}
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 10px;
+}
+.section-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 18px; height: 1px; background: var(--red);
+}
+.section-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  line-height: 0.96; letter-spacing: 0.01em;
+  margin-bottom: 52px;
+}
+.section-h2 em { color: var(--red); font-style: normal; }
+
+/* ── WHAT WE DO ── */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.tile {
+  background: var(--card);
+  padding: 28px 22px 34px;
+  position: relative; overflow: hidden;
+  transition: background 0.22s;
+  min-height: 110px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+}
+.tile:hover { background: var(--card-hv); }
+.tile::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 0; height: 2px; background: var(--red);
+  transition: width 0.32s ease;
+}
+.tile:hover::after { width: 100%; }
+.tile-name {
+  font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  line-height: 1.4; color: var(--white);
+}
+
+/* ── WHAT WE OFFER ── */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.offer-card-wide { grid-column: 1 / -1; }
+.offer-card {
+  background: var(--card);
+  padding: 36px;
+  position: relative; overflow: hidden;
+  transition: background 0.22s;
+  display: flex; flex-direction: column;
+}
+.offer-card:hover { background: var(--card-hv); }
+.offer-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 0; height: 3px; background: var(--red);
+  transition: width 0.38s ease;
+}
+.offer-card:hover::before { width: 100%; }
+.offer-card-wide .offer-inner {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px; align-items: start;
+}
+.offer-num {
+  font-size: 0.58rem; font-weight: 700;
+  letter-spacing: 0.2em; color: var(--red);
+  opacity: 0.75; margin-bottom: 14px;
+}
+.offer-title {
+  font-size: 1.05rem; font-weight: 800;
+  line-height: 1.25; margin-bottom: 8px;
+}
+.offer-sub {
+  font-size: 0.78rem; color: var(--muted);
+  font-style: italic; line-height: 1.75;
+}
+.offer-divider {
+  width: 100%; height: 1px;
+  background: var(--line); margin: 20px 0;
+}
+.offer-list { list-style: none; }
+.offer-list li {
+  font-size: 0.82rem; color: #bbb;
+  padding: 4px 0 4px 15px;
+  position: relative; line-height: 1.55;
+}
+.offer-list li::before {
+  content: '→';
+  position: absolute; left: 0; top: 5px;
+  color: var(--red); font-size: 0.62rem;
+}
+.offer-card-wide .offer-list { columns: 2; gap: 0 40px; }
+.offer-card-wide .offer-list li { break-inside: avoid; }
+
+/* ── HOW WE WORK ── */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.process-step { background: var(--card); padding: 30px 24px; }
+.process-n {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; color: rgba(200,37,26,0.16);
+  line-height: 1; margin-bottom: 10px;
+}
+.process-name { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; }
+.process-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.65; }
+
+/* ── CONTACT ── */
+#contact {
+  padding: 88px 60px;
+  border-bottom: 1px solid var(--line);
+}
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.contact-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  line-height: 0.96; margin-bottom: 18px;
+}
+.contact-headline em { color: var(--red); font-style: normal; }
+.contact-body { font-size: 0.88rem; color: var(--muted); line-height: 1.85; }
+.contact-cards {
+  display: flex; flex-direction: column;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.contact-card {
+  display: flex; align-items: center; gap: 18px;
+  background: var(--card); padding: 24px 28px;
+  text-decoration: none; color: inherit;
+  transition: background 0.2s;
+}
+.contact-card:hover { background: var(--card-hv); }
+.cc-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--red);
+}
+.cc-icon svg { width: 16px; height: 16px; }
+.cc-label {
+  font-size: 0.58rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--dim); margin-bottom: 3px;
+}
+.cc-value { font-size: 0.88rem; font-weight: 700; color: var(--white); }
+
+/* ── FOOTER ── */
+footer {
+  padding: 32px 60px;
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+footer p { font-size: 0.76rem; color: var(--dim); max-width: 540px; line-height: 1.7; }
+footer p strong { color: var(--red); font-weight: 600; }
+.footer-btn {
+  display: inline-block;
+  border: 1px solid var(--red); color: var(--red);
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; padding: 12px 26px;
+  transition: all 0.2s; white-space: nowrap;
+}
+.footer-btn:hover { background: var(--red); color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .offer-grid { grid-template-columns: repeat(2, 1fr); }
+  .offer-card-wide .offer-inner { grid-template-columns: 1fr; gap: 0; }
+  .offer-card-wide .offer-list { columns: 2; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 20px; height: 62px; }
+  .hero { padding: 64px 20px 60px; }
+  .hero h1 { font-size: clamp(2.8rem, 11vw, 4rem); }
+  .hero-watermark { display: none; }
+  .section { padding: 56px 20px; }
+  .section-h2 { font-size: clamp(2.2rem, 9vw, 3.2rem); margin-bottom: 36px; }
+  .tile-grid { grid-template-columns: repeat(2, 1fr); }
+  .offer-grid { grid-template-columns: 1fr; }
+  .offer-card-wide .offer-list { columns: 1; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  #contact { padding: 56px 20px; }
+  .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+  footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .tile-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: 1fr; }
+  .nav-cta span { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+  NAV
+  · Change logo: edit "Esper" and "Labs" text
+  · Change tagline: edit "Creative Agency"
+  · Button links to #contact section below
+════════════════════════════════════════ -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo">Esper<span>Labs</span></div>
+    <div class="nav-sub">Creative Agency</div>
+  </div>
+  <a href="#contact" class="nav-cta">
+    <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.11 12 19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <span>Contact Us</span>
+  </a>
+</nav>
+
+<!-- ════════════════════════════════════════
+  HERO
+  · Change main heading: edit the <h1> text
+  · "Brands" is in red — wrap any word in <span class="red"> to make it red
+  · Change description: edit the <p class="hero-desc"> text
+  · Change location tag: edit "Based in Guntur, Andhra Pradesh"
+════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">Esper Labs — Creative Agency</div>
+  <h1>We Build <span class="red">Brands</span> That People Remember.</h1>
+  <div class="hero-bottom">
+    <p class="hero-desc">From content creation to complete brand identity — we help businesses grow their digital presence with strategy, creativity, and consistency.</p>
+    <div class="hero-tag"><span class="dot">◆</span> Based in Guntur, Andhra Pradesh</div>
+  </div>
+  <div class="hero-watermark" aria-hidden="true">EL</div>
+</section>
+
+<!-- ════════════════════════════════════════
+  MARQUEE STRIP (scrolling text bar)
+  · Edit any service name in the <span> tags
+  · The list is duplicated below for seamless loop — edit both sets
+════════════════════════════════════════ -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Content Creation</span><span class="dot">◆</span>
+    <span>Video Editing</span><span class="dot">◆</span>
+    <span>Brand Identity</span><span class="dot">◆</span>
+    <span>Social Media</span><span class="dot">◆</span>
+    <span>Personal Branding</span><span class="dot">◆</span>
+    <span>Video Production</span><span class="dot">◆</span>
+    <span>Brand Strategy</span><span class="dot">◆</span>
+    <span>Website Development</span><span class="dot">◆</span>
+    <!-- duplicate for seamless loop — keep this identical to above -->
+    <span>Content Creation</span><span class="dot">◆</span>
+    <span>Video Editing</span><span class="dot">◆</span>
+    <span>Brand Identity</span><span class="dot">◆</span>
+    <span>Social Media</span><span class="dot">◆</span>
+    <span>Personal Branding</span><span class="dot">◆</span>
+    <span>Video Production</span><span class="dot">◆</span>
+    <span>Brand Strategy</span><span class="dot">◆</span>
+    <span>Website Development</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+  WHAT WE DO
+  · Edit each service name inside .tile-name
+  · To add a service: copy one <div class="tile"> line and paste
+  · To remove a service: delete the full <div class="tile"> line
+  · Keep total tiles as multiples of 5 (5 or 10) for clean grid
+════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-eyebrow">What We Do</div>
+  <div class="section-h2">Everything Your Brand <em>Needs.</em></div>
+  <div class="tile-grid">
+    <div class="tile"><div class="tile-name">Content Creation</div></div>
+    <div class="tile"><div class="tile-name">Video Editing</div></div>
+    <div class="tile"><div class="tile-name">Video Production</div></div>
+    <div class="tile"><div class="tile-name">Brand Designing</div></div>
+    <div class="tile"><div class="tile-name">Social Media Management</div></div>
+    <div class="tile"><div class="tile-name">Personal Branding</div></div>
+    <div class="tile"><div class="tile-name">Website Development</div></div>
+    <div class="tile"><div class="tile-name">Brand Identity</div></div>
+    <div class="tile"><div class="tile-name">Brand Strategy</div></div>
+    <div class="tile"><div class="tile-name">Social Media Marketing</div></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  WHAT WE OFFER (service packages)
+  · Each package is one <div class="offer-card"> block
+  · Edit .offer-title for the package name
+  · Edit .offer-sub for the short description under the name
+  · Edit each <li> item for what's included in that package
+  · To add a package: copy a full offer-card block and paste before the wide card
+  · To remove a package: delete the full offer-card block
+  · Package 07 is the wide landscape card — keep class "offer-card-wide" on it
+════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-eyebrow">What We Offer</div>
+  <div class="section-h2">Full-Service <em>Packages</em> Built For You.</div>
+  <div class="offer-grid">
+
+    <!-- PACKAGE 01 -->
+    <div class="offer-card">
+      <div class="offer-num">01</div>
+      <div class="offer-title">Digital Launch Pack</div>
+      <div class="offer-sub">For new or offline businesses stepping into digital — a complete foundation to get started right.</div>
+      <div class="offer-divider"></div>
+      <ul class="offer-list">
+        <li>Google Business Profile setup</li>
+        <li>WhatsApp Business setup & catalog</li>
+        <li>Social media page setup</li>
+        <li>Bio & profile optimization</li>
+        <li>Brand direction & color palette</li>
+        <li>Link in Bio setup</li>
+      </ul>
+    </div>
+
+    <!-- PACKAGE 02 -->
+    <div class="offer-card">
+      <div class="offer-num">02</div>
+      <div class="offer-title">Social Media Management</div>
+      <div class="offer-sub">Monthly management of your social presence — strategy, content, and growth handled end to end.</div>
+      <div class="offer-divider"></div>
+      <ul class="offer-list">
+        <li>Content calendar & strategy</li>
+        <li>Graphics & reels every month</li>
+        <li>Captions, hashtags & scheduling</li>
+        <li>Engagement & community handling</li>
+        <li>Monthly performance report</li>
+      </ul>
+    </div>
+
+    <!-- PACKAGE 03 -->
+    <div class="offer-card">
+      <div class="offer-num">03</div>
+      <div class="offer-title">Brand Identity & Design</div>
+      <div class="offer-sub">A complete visual identity that communicates your value — from logo to brand language.</div>
+      <div class="offer-divider"></div>
+      <ul class="offer-list">
+        <li>Logo design</li>
+        <li>Color palette & typography</li>
+        <li>Brand tone & messaging</li>
+        <li>Social media visual system</li>
+        <li>Brand guidelines document</li>
+      </ul>
+    </div>
+
+    <!-- PACKAGE 04 -->
+    <div class="offer-card">
+      <div class="offer-num">04</div>
+      <div class="offer-title">Content Creation & Video Production</div>
+      <div class="offer-sub">High-quality shoots and edits for brands that want a powerful visual presence online.</div>
+      <div class="offer-divider"></div>
+      <ul class="offer-list">
+        <li>Reel & short-form video shoot</li>
+        <li>Brand & corporate video production</li>
+        <li>Product photography & shoot</li>
+        <li>Personal branding shoot</li>
+        <li>Event coverage</li>
+      </ul>
+    </div>
+
+    <!-- PACKAGE 05 -->
+    <div class="offer-card">
+      <div class="offer-num">05</div>
+      <div class="offer-title">Personal Branding</div>
+      <div class="offer-sub">For professionals, doctors, coaches & entrepreneurs who want to be known as the authority in their field.</div>
+      <div class="offer-divider"></div>
+      <ul class="offer-list">
+        <li>Brand positioning & strategy</li>
+        <li>Social media handling</li>
+        <li>Content planning & calendar</li>
+        <li>LinkedIn optimization</li>
+        <li>Bio, media kit & speaking profile</li>
+      </ul>
+    </div>
+
+    <!-- PACKAGE 06 -->
+    <div class="offer-card">
+      <div class="offer-num">06</div>
+      <div class="offer-title">WhatsApp Marketing Setup</div>
+      <div class="offer-sub">Turn WhatsApp into a direct, powerful customer communication and marketing channel for your business.</div>
+      <div class="offer-divider"></div>
+      <ul class="offer-list">
+        <li>WhatsApp Business full setup</li>
+        <li>Product & service catalog</li>
+        <li>Broadcast strategy & setup</li>
+        <li>Auto-reply & quick replies</li>
+        <li>Campaign message templates</li>
+      </ul>
+    </div>
+
+    <!-- PACKAGE 07 — WIDE LANDSCAPE CARD — keep "offer-card-wide" class -->
+    <div class="offer-card offer-card-wide">
+      <div class="offer-inner">
+        <div>
+          <div class="offer-num">07</div>
+          <div class="offer-title">Social Media Audit & Consultation</div>
+          <div class="offer-sub">Not sure what's holding your social media back? Get a clear, honest diagnosis and a concrete action plan — in one focused session.</div>
+        </div>
+        <div>
+          <div class="offer-divider"></div>
+          <ul class="offer-list">
+            <li>Full profile & content audit across platforms</li>
+            <li>Competitor landscape review</li>
+            <li>Growth bottleneck identification</li>
+            <li>45-min recorded strategy call</li>
+            <li>Written action plan delivered as PDF</li>
+            <li>Top quick wins you can act on immediately</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  HOW WE WORK
+  · Edit each step name in .process-name
+  · Edit each step description in .process-desc
+  · Numbers (01–05) are display only — edit them manually if you add/remove steps
+════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-eyebrow">How We Work</div>
+  <div class="section-h2">Simple. <em>Clear.</em> Professional.</div>
+  <div class="process-grid">
+    <!-- STEP 01 -->
+    <div class="process-step">
+      <div class="process-n">01</div>
+      <div class="process-name">Discovery Call</div>
+      <div class="process-desc">We start with a free 15–30 min call to understand your business, goals, and what you need.</div>
+    </div>
+    <!-- STEP 02 -->
+    <div class="process-step">
+      <div class="process-n">02</div>
+      <div class="process-name">Custom Proposal</div>
+      <div class="process-desc">A detailed proposal with scope, deliverables, timeline, and final pricing — before any work begins.</div>
+    </div>
+    <!-- STEP 03 -->
+    <div class="process-step">
+      <div class="process-n">03</div>
+      <div class="process-name">50% Advance</div>
+      <div class="process-desc">Work begins after 50% advance payment. Balance is due on final delivery.</div>
+    </div>
+    <!-- STEP 04 -->
+    <div class="process-step">
+      <div class="process-n">04</div>
+      <div class="process-name">Delivery & Review</div>
+      <div class="process-desc">We deliver on time. You review, give feedback. Revisions handled as per agreed scope.</div>
+    </div>
+    <!-- STEP 05 -->
+    <div class="process-step">
+      <div class="process-n">05</div>
+      <div class="process-name">Ongoing Support</div>
+      <div class="process-desc">Monthly clients get priority support. Project clients get 7-day post-delivery support.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  CONTACT
+  · Edit phone: change number in href="tel:+91..." and in the visible text
+  · Edit email: change address in href="mailto:..." and in the visible text
+  · Edit location: change city/state in the last .cc-value
+  · Edit heading and body text on the left side
+════════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="contact-left">
+      <div class="section-eyebrow">Get In Touch</div>
+      <div class="contact-headline">Let's Build<br>Something<br><em>Great.</em></div>
+      <p class="contact-body">Have a project in mind or just want to explore how we can help your brand grow? Reach out — we'd love to hear from you.</p>
+    </div>
+    <div class="contact-cards">
+
+      <!-- PHONE NUMBER — edit +916281587582 and "+91 62815 87582" -->
+      <a class="contact-card" href="tel:+916281587582">
+        <div class="cc-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015.11 12 19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="cc-label">Call / WhatsApp</div>
+          <div class="cc-value">+91 62815 87582</div>
+        </div>
+      </a>
+
+      <!-- EMAIL — edit both the mailto: link and the display text -->
+      <a class="contact-card" href="mailto:hello.esperlabs@gmail.com">
+        <div class="cc-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="cc-label">Email Us</div>
+          <div class="cc-value">hello.esperlabs@gmail.com</div>
+        </div>
+      </a>
+
+      <!-- LOCATION — edit city and state -->
+      <div class="contact-card">
+        <div class="cc-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="cc-label">Location</div>
+          <div class="cc-value">Guntur, Andhra Pradesh</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  FOOTER
+  · Edit the small disclaimer text in <p>
+  · Edit the button text in .footer-btn
+════════════════════════════════════════ -->
+<footer>
+  <p>We always send a <strong>detailed proposal</strong> before any work begins. <strong>50% advance required</strong> to start. All pricing is shared after understanding your scope.</p>
+  <a href="#contact" class="footer-btn">Get a Free Quote →</a>
+</footer>
+
+</body>
+</html>
